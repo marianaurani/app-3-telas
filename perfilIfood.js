@@ -177,7 +177,7 @@ export default function PerfilIfood() {
       {/* Barra inferior */}
       <View style={styles.bottomTab}>
         <TouchableOpacity style={styles.tabItem}>
-          <Ionicons name="home-outline" size={24} color="red" />
+          <Ionicons name="home-outline" size={24} color="#555" />
           <Text style={styles.tabLabel}>Início</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabItem}>
@@ -189,7 +189,7 @@ export default function PerfilIfood() {
           <Text style={styles.tabLabel}>Pedidos</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tabItem}>
-          <Ionicons name="person-circle-outline" size={24} color="#555" />
+          <Ionicons name="person-circle-outline" size={24} color="red" />
           <Text style={styles.tabLabel}>Perfil</Text>
         </TouchableOpacity>
       </View>
