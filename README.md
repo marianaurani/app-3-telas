@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Sample Snack app
 
 Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
@@ -13,3 +14,6 @@ Snack is Open Source. You can find the code on the [GitHub repo](https://github.
 =======
 # app-3-telas
 >>>>>>> 8132dfa59f9d1a983564103258bb10b584dd636d
+=======
+# app-3-telas
+>>>>>>> 19fa8c1f40c1156a3ffedf3dd45a1a7236e10111
