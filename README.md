@@ -1,19 +1,39 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Sample Snack app
+# App 3 Telas - React Native
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Projeto desenvolvido para a disciplina de mobile com o objetivo de replicar 3 telas distintas de aplicativos utilizando React Native e Expo.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+📱 Telas Implementadas
+    - Perfil iFood
+    - Cartão Mercado Pago
+    - Bolos do Flávio
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+📦 Como Executar o Projeto
+Pré-requisitos
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+Node.js instalado
+Expo Go instalado no celular (Android/iOS)
+Git instalado
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
-=======
-# app-3-telas
->>>>>>> 8132dfa59f9d1a983564103258bb10b584dd636d
-=======
-# app-3-telas
->>>>>>> 19fa8c1f40c1156a3ffedf3dd45a1a7236e10111
+Passo a passo
+bash# Clone o repositório
+git clone https://github.com/marianaurani/NOME-DO-REPOSITORIO.git
+
+# Entre na pasta do projeto
+cd NOME-DO-REPOSITORIO
+
+# Instale as dependências
+npm install
+
+# Inicie o projeto
+expo start
+Visualizando no celular
+
+Abra o app Expo Go no seu celular
+Escaneie o QR Code que aparecer no terminal/navegador
+O app será carregado no seu dispositivo
+
+📝 Observações
+
+Projeto desenvolvido no Snack Expo: https://snack.expo.dev
+SDK Version: 54
+Funciona em dispositivos Android e iOS
