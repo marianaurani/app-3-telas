@@ -4,14 +4,15 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  Image,
   TouchableOpacity,
+  Image,
   StatusBar,
   ImageBackground,
+  Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const BolosDoFlavioScreen = () => {
+const BolosDoFlavioScreen = ({ onBack }) => {
   const products = [
     {
       id: '1',
@@ -66,10 +67,10 @@ const BolosDoFlavioScreen = () => {
       <StatusBar backgroundColor="#8B4513" barStyle="light-content" />
       
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-        {/* Header com ícones - agora dentro do ScrollView */}
+        {/* Header com ícones */}
         <View style={styles.headerSection}>
           <View style={styles.headerIcons}>
-            <TouchableOpacity style={styles.iconButton}>
+            <TouchableOpacity style={styles.iconButton} onPress={onBack}>
               <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
             
@@ -93,9 +94,9 @@ const BolosDoFlavioScreen = () => {
           </ImageBackground>
         </View>
 
-        {/* Store Info Card - Sobrepondo a logo */}
+        {/* Store Info Card */}
         <View style={styles.storeInfoCard}>
-          {/* Círculo com logo posicionado no centro da tela */}
+          {/* Círculo com logo */}
           <View style={styles.logoCircleOverCard}>
             <Image 
               source={require('../assets/logo.jpg')} 
@@ -103,21 +104,20 @@ const BolosDoFlavioScreen = () => {
             />
           </View>
           
-          {/* Linha 1: Nome da loja com setinha */}
+          {/* Nome da loja */}
           <View style={styles.storeInfoRow}>
             <Text style={styles.storeName}>Bolos do Flávio - Águas Claras</Text>
             <Ionicons name="chevron-forward" size={20} color="#666" />
           </View>
           
-          {/* Linha 2: Detalhes da entrega (sem setinha) */}
+          {/* Detalhes da entrega */}
           <View style={styles.storeDetailsRow}>
             <Text style={styles.storeDetails}>Entrega rastreável • 1,0 km • Min R$ 20,00</Text>
           </View>
           
-          {/* Linha divisória */}
           <View style={styles.divider} />
           
-          {/* Linha 3: Avaliação e nível com setinha */}
+          {/* Avaliação */}
           <View style={styles.storeInfoRow}>
             <View style={styles.ratingContainer}>
               <Ionicons name="star" size={16} color="#000" />
@@ -127,10 +127,9 @@ const BolosDoFlavioScreen = () => {
             <Ionicons name="chevron-forward" size={20} color="#666" />
           </View>
           
-          {/* Linha divisória */}
           <View style={styles.divider} />
           
-          {/* Linha 4: Entrega com setinhas */}
+          {/* Entrega */}
           <View style={styles.storeInfoRow}>
             <View style={styles.deliveryContainer}>
               <Text style={styles.deliveryLabel}>Entrega</Text>
@@ -142,7 +141,7 @@ const BolosDoFlavioScreen = () => {
           </View>
         </View>
 
-        {/* Destaques Section */}
+        {/* Destaques */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Destaques</Text>
           
@@ -165,7 +164,6 @@ const BolosDoFlavioScreen = () => {
           </View>
         </View>
         
-        {/* Espaçamento extra para não colar no menu do telefone */}
         <View style={styles.bottomSpacing} />
       </ScrollView>
     </View>
@@ -186,7 +184,7 @@ const styles = StyleSheet.create({
   },
   headerIcons: {
     position: 'absolute',
-    top: 28,
+    top: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 10 : 50,
     left: 0,
     right: 0,
     zIndex: 10,
@@ -253,11 +251,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-  },
-  logoText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: '#8B4513',
   },
   storeInfoRow: {
     flexDirection: 'row',

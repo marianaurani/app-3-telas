@@ -5,6 +5,8 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Platform,
+  StatusBar,
 } from "react-native";
 import {
   Ionicons,
@@ -16,7 +18,10 @@ import {
 export default function PerfilIfood() {
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView style={styles.container}>
+      <ScrollView 
+        style={styles.container}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      >
         {/* Header */}
         <View style={styles.profileHeader}>
           <View style={styles.avatarPlaceholder} />
@@ -127,7 +132,6 @@ export default function PerfilIfood() {
           {
             title: "Comunidade iFood",
             subtitle: "Junte-se a nós",
-            badge: "NOVO",
             icon: (
               <Ionicons
                 name="people-outline"
@@ -172,6 +176,14 @@ export default function PerfilIfood() {
             <MaterialIcons name="chevron-right" size={22} color="#aaa" />
           </View>
         ))}
+
+        {/* Botão Ir para Cartão - pequeno no canto direito */}
+        <View style={{ alignItems: 'flex-end', marginTop: 30, marginBottom: 20 }}>
+          <TouchableOpacity style={styles.cartaoButton}>
+            <Text style={styles.cartaoButtonText}>Ir para Cartão</Text>
+          </TouchableOpacity>
+        </View>
+
       </ScrollView>
 
       {/* Barra inferior */}
@@ -260,4 +272,15 @@ const styles = StyleSheet.create({
   },
   tabItem: { alignItems: "center" },
   tabLabel: { fontSize: 12, color: "#555", marginTop: 2 },
+  cartaoButton: {
+    backgroundColor: 'red',
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderRadius: 20,
+  },
+  cartaoButtonText: {
+    color: '#fff',
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
 });
