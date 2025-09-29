@@ -26,9 +26,10 @@ npm install
 
 # Inicie o projeto
 expo start
-Visualizando no celular
 
-Abra o app Expo Go no seu celular
+# App Expo Go 
+
+Baixe e abra o app Expo Go no seu celular
 Escaneie o QR Code que aparecer no terminal/navegador
 O app será carregado no seu dispositivo
 
