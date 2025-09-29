@@ -2,30 +2,33 @@
 
 Projeto desenvolvido para a disciplina de mobile com o objetivo de replicar 3 telas distintas de aplicativos utilizando React Native e Expo.
 
-📱 Telas Implementadas
+#📱 Telas Implementadas
     - Perfil iFood
     - Cartão Mercado Pago
     - Bolos do Flávio
 
-📦 Como Executar o Projeto
-Pré-requisitos
+#📦 Como Executar o Projeto
 
-Node.js instalado
-Expo Go instalado no celular (Android/iOS)
-Git instalado
+Pré-requisitos: 
+- Node.js instalado
+- Expo Go instalado no celular (Android/iOS)
+- Git instalado
 
-Passo a passo
-bash# Clone o repositório
-git clone https://github.com/marianaurani/NOME-DO-REPOSITORIO.git
+# Passo a passo
 
-# Entre na pasta do projeto
+Clone o repositório:
+git clone https://github.com/marianaurani/app-3-telas.git
+
+Entre na pasta do projeto
 cd NOME-DO-REPOSITORIO
 
-# Instale as dependências
+Instale as dependências
 npm install
 
-# Inicie o projeto
+Inicie o projeto
 expo start
+
+Acesse o App Expo Go
 
 # App Expo Go 
 
