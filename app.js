@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
 import PerfilIfood from './components/perfilIfood';
 import CartaoMercadoPago from './components/cartaoMercadoPago';
 import BolosDoFlavioScreen from './components/BolosDoFlavioScreen';
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState('perfil'); // 'perfil', 'cartao', 'bolos'
+  const [currentScreen, setCurrentScreen] = useState('perfil');
 
   const renderScreen = () => {
     switch (currentScreen) {
@@ -21,7 +21,9 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" />
+      
       {/* Navegação simples */}
       <View style={styles.navigation}>
         <TouchableOpacity
@@ -80,7 +82,7 @@ export default function App() {
       <View style={styles.screenContainer}>
         {renderScreen()}
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -88,6 +90,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   navigation: {
     flexDirection: 'row',
@@ -96,7 +99,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
-    paddingTop: 40, // Espaço para a status bar
   },
   navButton: {
     flex: 1,
