@@ -212,6 +212,8 @@ export default function PerfilIfood() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff", padding: 16 },
   profileHeader: {
+    // marginTop: 60, 
+    //ativar marginTop - p/ espaço seta de navegação - caso não queira que a seta fique em cima do perfil
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 24,

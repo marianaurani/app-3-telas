@@ -122,7 +122,7 @@ const BolosDoFlavioScreen = ({ onBack }) => {
             <View style={styles.ratingContainer}>
               <Ionicons name="star" size={16} color="#000" />
               <Text style={styles.ratingText}>4,9</Text>
-              <Text style={styles.ratingCount}>(11 mil avaliações) • Nível 4 de 5</Text>
+              <Text style={styles.ratingCount}>(1,1 mil avaliações) • Nível 4 de 5</Text>
             </View>
             <Ionicons name="chevron-forward" size={20} color="#666" />
           </View>
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
   storeInfoCard: {
     backgroundColor: 'white',
     marginHorizontal: 16,
-    marginTop: -80,
+    marginTop: -60,
     marginBottom: 8,
     borderRadius: 12,
     padding: 16,

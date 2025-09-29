@@ -3,71 +3,59 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   TouchableOpacity,
   Image,
   Platform,
   StatusBar,
 } from "react-native";
 
-// Componente ScreenWrapper embutido
-const ScreenWrapper = ({ children, backgroundColor = '#fff' }) => {
-  return (
-    <View style={[styles.wrapper, { backgroundColor }]}>
-      {children}
-    </View>
-  );
-};
-
 export default function CartaoMercadoPago() {
   return (
-    <ScreenWrapper backgroundColor="#fff">
-      <View style={styles.cartaoContainer}>
-        {/* Conteúdo principal */}
-        <View style={styles.content}>
-          {/* Imagem */}
-          <Image
-            source={require("../assets/icone_cel-cartao.png")}
-            style={styles.cartaoImagem}
-            resizeMode="contain"
-          />
+    <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+      
+      {/* Conteúdo centralizado */}
+      <View style={styles.content}>
+        {/* Ícone */}
+        <Image
+          source={require("../assets/icone_cel-cartao.png")}
+          style={styles.icone}
+          resizeMode="contain"
+        />
 
-          {/* Texto */}
-          <View style={{ paddingHorizontal: 20, alignItems: "center" }}>
-            <Text style={styles.cartaoTexto}>
-              Peça seu Cartão de Crédito Mercado Pago e aproveite essas vantagens
-              exclusivas:🛒✨
-            </Text>
-            <Text style={styles.cartaoItem}>
-              - Parcele suas compras em até{" "}
-              <Text style={{ fontWeight: "bold" }}>
-                18x sem juros no Mercado Livre
-              </Text>
-            </Text>
-            <Text style={styles.cartaoItem}>- Anuidade Grátis</Text>
-            <Text style={styles.cartaoItem}>
-              - <Text style={{ fontWeight: "bold" }}>Segurança e controle:</Text>{" "}
-              acompanhe seus gastos pelo App, garantindo controle de todas suas
-              transações.
-            </Text>
-          </View>
+        {/* Título */}
+        <Text style={styles.titulo}>
+          Peça seu Cartão de Crédito Mercado Pago e aproveite essas vantagens exclusivas:🛒✨
+        </Text>
+
+        {/* Lista de benefícios */}
+        <View style={styles.beneficios}>
+          <Text style={styles.beneficioItem}>
+            - Parcele suas compras em até <Text style={styles.destaque}>18x sem juros no Mercado Livre</Text>
+          </Text>
+          
+          <Text style={styles.beneficioItem}>
+            - Anuidade Grátis
+          </Text>
+          
+          <Text style={styles.beneficioItem}>
+            - <Text style={styles.destaque}>Segurança e controle:</Text> acompanhe seus gastos pelo App, garantindo controle de todas suas transações.
+          </Text>
         </View>
+      </View>
 
-        {/* Botão fixo no rodapé */}
-        <TouchableOpacity style={styles.botaoCartao}>
-          <Text style={styles.botaoCartaoTexto}>Peça já</Text>
+      {/* Botão fixo no rodapé */}
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.botao}>
+          <Text style={styles.botaoTexto}>Peça já</Text>
         </TouchableOpacity>
       </View>
-    </ScreenWrapper>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    paddingTop: Platform.OS === 'ios' ? 44 : StatusBar.currentHeight || 0,
-  },
-  cartaoContainer: {
+  container: {
     flex: 1,
     backgroundColor: "#fff",
   },
@@ -75,34 +63,54 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
   },
-  cartaoImagem: {
-    width: 160,
-    height: 160,
-    marginBottom: 16,
-  },
-  cartaoTexto: {
-    fontSize: 16,
-    textAlign: "center",
-    marginBottom: 16,
-  },
-  cartaoItem: {
-    fontSize: 14,
-    marginVertical: 4,
-    textAlign: "center",
-  },
-  botaoCartao: {
-    backgroundColor: "#007bff",
-    padding: 14,
-    borderRadius: 8,
-    alignItems: "center",
-    marginHorizontal: 20,
+  icone: {
+    width: 140,
+    height: 140,
     marginBottom: 30,
   },
-  botaoCartaoTexto: {
-    color: "#fff",
+  titulo: {
+    fontSize: 17,
+    textAlign: "center",
+    color: "#000",
+    marginBottom: 24,
+    lineHeight: 24,
+    fontWeight: "500",
+  },
+  beneficios: {
+    width: "100%",
+    alignItems: "center",
+  },
+  beneficioItem: {
+    fontSize: 15,
+    color: "#000",
+    marginBottom: 12,
+    lineHeight: 22,
+    textAlign: "center",
+    width: "100%",
+  },
+  destaque: {
     fontWeight: "bold",
+  },
+  footer: {
+    paddingHorizontal: 20,
+    paddingBottom: 30,
+  },
+  botao: {
+    backgroundColor: "#3483FA",
+    paddingVertical: 16,
+    borderRadius: 6,
+    alignItems: "center",
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
+  botaoTexto: {
+    color: "#fff",
     fontSize: 16,
+    fontWeight: "600",
   },
 });
